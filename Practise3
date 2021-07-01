@@ -1,0 +1,127 @@
+A)               a = input().split()
+for i in range(0, len(a), 2):
+    print(a[i])
+    
+    H)     
+    i=list(input().split())
+min=1000
+for k in range(len(i)):
+    s=int(i[k])
+    if (s<min)and(s>0):
+        min=s
+print(min)
+
+
+M)
+a = []
+while 1:
+    b = input(Введите число.Если хотите выйти напишите n: ")
+    if (b == 'n'):
+        break
+    if b.isdigit():
+        a.append(int(b))
+a.reverse()
+print(a)
+
+
+W)
+..if s[k]==0:
+
+....del s[k]
+
+....s.append(0)
+print(s)
+
+Z)
+input()
+a = input().split(' ')
+k = int(input())
+print(*a[-k:], end=' ')
+print(*a[0:-k])
+
+
+
+
+
+
+
+
+
+
+
+1. A)
+print(len(set(input().split())))
+
+
+2.B)
+print(len(set(input().split()) & set(input().split())))
+
+3.C)
+print(*sorted(set(input().split()) & set(input().split()), key=int))
+
+
+4.E)
+ann, boris = list(map(int, input().split()))
+a = set()
+b = set()
+for i in range(ann):
+    a.add(int(input()))
+for i in range(boris):
+    b.add(int(input()))
+
+print(len(a.intersection(b)))
+print(*sorted(a.intersection(b)))
+print(len(a.difference(b)))
+print(*sorted(a.difference(b)))
+print(len(b.difference(a)))
+print(*sorted(b.difference(a)))
+
+
+5.L)
+n = int(input())
+dict_ = {}
+
+for _ in range(n):
+____k, v = input().split()
+____dict_[k] = v
+
+synonim = input()
+
+print(dict_.get(synonim) or ''.join([k for k, v in dict_.items() if v == synonim]) or 'No synonim')
+
+6.P)
+from collections import Counter
+ 
+words = []
+for _ in range(int(input())):
+    words.extend(input().split())
+ 
+counter = Counter(words)
+pairs = [(-pair[1], pair[0]) for pair in counter.most_common()]
+words = [pair[1] for pair in sorted(pairs)]
+print('\n'.join(words))
+
+
+7.Z)
+def height(man):
+    if man not in p_tree:
+        return 0
+    else:
+        return 1 + height(p_tree[man])
+ 
+p_tree = {}
+n = int(input())
+for i in range(n - 1):
+    child, parent = input().split()
+    p_tree[child] = parent
+ 
+heights = {}
+for man in set(p_tree.keys()).union(set(p_tree.values())):
+    heights[man] = height(man)
+ 
+for key, value in sorted(heights.items()):
+    print(key, value)
+
+
+    
+    
