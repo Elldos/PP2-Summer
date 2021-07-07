@@ -1,0 +1,53 @@
+def file_read(fname):
+    txt = open(fname)
+    print(txt.read())
+
+file_read('test.txt')
+
+
+
+  
+from collections import Counter
+
+def word_count(fname):
+    with open(fname) as f:
+        return Counter(f.read().split())
+
+print("Number of words in the file :", word_count("test.txt"))
+
+
+
+
+import os
+statinfo = os.stat('test.txt')
+print(statinfo.st_size, 'bytes')
+
+import string
+def letters_file_line(n):
+   with open("words1.txt", "w") as f:
+       alphabet = string.ascii_uppercase
+       letters = [alphabet[i:i + n] + "\n" for i in range(0, len(alphabet), n)]
+       f.writelines(letters)
+letters_file_line(3)
+
+import string, os
+if not os.path.exists("letters"):
+   os.makedirs("letters")
+for letter in string.ascii_uppercase:
+   with open(letter + ".txt", "w") as f:
+       f.writelines(letter)
+       
+       with open('test.txt', encoding='utf8') as f:
+    x = f.readlines()
+print(x)
+
+
+
+  
+import string
+def letters_file_line(n):
+   with open("words1.txt", "w") as f:
+       alphabet = string.ascii_uppercase
+       letters = [alphabet[i:i + n] + "\n" for i in range(0, len(alphabet), n)]
+       f.writelines(letters)
+letters_file_line(3)
